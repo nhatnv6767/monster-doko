@@ -40,7 +40,7 @@ class App extends Component {
                         // nếu tên của monster bao gồm chuỗi tìm kiếm, thì giữ nó
                         // nếu nó không bao gồm nó, loại bỏ nó
                         const filteredMonsters = this.state.monsters.filter((monster) => {
-                            return monster.name.includes(searchString)
+                            return monster.name.toLocaleLowerCase().includes(searchString)
                         })
                         this.setState(() => {
                             return {
