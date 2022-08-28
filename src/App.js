@@ -7,7 +7,8 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            monsters: []
+            monsters: [],
+            searchField: ""
         }
     }
 
@@ -28,6 +29,13 @@ class App extends Component {
 
     // 2nd
     render() {
+
+        // nếu tên của monster bao gồm chuỗi tìm kiếm, thì giữ nó
+        // nếu nó không bao gồm nó, loại bỏ nó
+        const filteredMonsters = this.state.monsters.filter((monster) => {
+            return monster.name.toLocaleLowerCase().includes(this.state.searchField)
+        })
+
         return (
             <div className="App">
                 <input
@@ -35,24 +43,17 @@ class App extends Component {
                     type="search"
                     placeholder="search monsters"
                     onChange={(event) => {
-                        console.log({startingArray: this.state.monsters})
-                        const searchString = event.target.value.toLocaleLowerCase()
-                        // nếu tên của monster bao gồm chuỗi tìm kiếm, thì giữ nó
-                        // nếu nó không bao gồm nó, loại bỏ nó
-                        const filteredMonsters = this.state.monsters.filter((monster) => {
-                            return monster.name.toLocaleLowerCase().includes(searchString)
-                        })
+                        const searchField = event.target.value.toLocaleLowerCase()
+
                         this.setState(() => {
                             return {
-                                monsters: filteredMonsters
+                                searchField
                             }
-                        }, () => {
-                            console.log({endingArray: this.state.monsters})
                         })
                     }}
                 />
                 {
-                    this.state.monsters.map((monster) => {
+                    filteredMonsters.map((monster) => {
                         return (
                             <div key={monster.id}>
                                 <h1>{monster.name}!!!</h1>
