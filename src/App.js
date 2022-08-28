@@ -15,16 +15,20 @@ class App extends Component {
             .then(response =>
                 response.json()
             )
-            .then((users) => console.log(users))
+            .then((users) => this.setState(() => {
+                return {
+                    monsters: users
+                }
+            }))
     }
 
     render() {
         return (
             <div className="App">
                 {
-                    this.state.monsters.map((monster, index) => {
+                    this.state.monsters.map((monster) => {
                         return (
-                            <div key={index}>
+                            <div key={monster.id}>
                                 <h1>{monster.name}!!!</h1>
                             </div>
                         )
