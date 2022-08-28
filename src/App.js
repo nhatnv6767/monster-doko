@@ -25,7 +25,7 @@ class App extends Component {
                                         lastName: "Neaogie"
                                     }
                                 }
-                            }, ()=> {console.log(this.state)})
+                            })
 
                         }}
 
