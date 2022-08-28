@@ -5,19 +5,23 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state={
-            monster1: {
-                name: "Linda"
-            },
-            monster2: {
-                name: "Frank"
-            },
-            monster3: {
-                name: "Jacky"
-            }
+        this.state = {
+            monsters: [
+                {
+                    name: "Linda"
+                },
+                {
+                    name: "Frank"
+                },
+                {
+                    name: "Jacky"
+                }
+            ]
+
         }
     }
-    render(){
+
+    render() {
         return (
             <div className="App">
                 <h1>{this.state.monster1.name}</h1>
