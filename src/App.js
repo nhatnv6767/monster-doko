@@ -6,33 +6,23 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state={
-            name: {firstName: "YungTr", lastName: "TCM"},
-            company: "BTM",
+            monster1: {
+                name: "Linda"
+            },
+            monster2: {
+                name: "Frank"
+            },
+            monster3: {
+                name: "Jacky"
+            }
         }
     }
     render(){
         return (
             <div className="App">
-                <header className="App-header">
-                    <p>None {this.state.name.firstName} {this.state.name.lastName},
-                        I work at {this.state.company}</p>
-                    <button
-                        onClick={()=> {
-                            this.setState(() => {
-                                return {
-                                    name: {
-                                        firstName: "Andree",
-                                        lastName: "Neaogie"
-                                    }
-                                }
-                            })
-
-                        }}
-
-                    >
-                        Change Name
-                    </button>
-                </header>
+                <h1>{this.state.monster1.name}</h1>
+                <h1>{this.state.monster2.name}</h1>
+                <h1>{this.state.monster3.name}</h1>
             </div>
         );
     }
