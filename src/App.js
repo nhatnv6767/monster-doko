@@ -10,6 +10,11 @@ class App extends Component {
         }
     }
 
+    componentDidMount() {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response => console.log(response))
+    }
+
     render() {
         return (
             <div className="App">
