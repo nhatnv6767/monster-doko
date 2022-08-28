@@ -14,7 +14,14 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <p>None {this.state.name}</p>
-                    <button>Change Name</button>
+                    <button
+                        onClick={()=> {
+                            this.setState({name: "Andree"})
+                        }}
+
+                    >
+                        Change Name
+                    </button>
                 </header>
             </div>
         );
