@@ -6,7 +6,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state={
-            name: "YungTr",
+            name: {firstName: "YungTr", lastName: "TCM"},
             company: "BTM",
         }
     }
@@ -14,7 +14,8 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <p>None {this.state.name}, I work at {this.state.company}</p>
+                    <p>None {this.state.name.firstName} {this.state.name.lastName},
+                        I work at {this.state.company}</p>
                     <button
                         onClick={()=> {
                             this.setState({name: "Andree"})
