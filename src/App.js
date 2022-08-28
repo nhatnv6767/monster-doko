@@ -22,7 +22,7 @@ class App extends Component {
                     monsters: users
                 }
             }, () => {
-                console.log(this.state)
+                // console.log(this.state)
             }))
     }
 
@@ -40,6 +40,11 @@ class App extends Component {
                         // nếu nó không bao gồm nó, loại bỏ nó
                         const filteredMonsters = this.state.monsters.filter((monster) => {
                             return monster.name.includes(event.target.value)
+                        })
+                        this.setState(() => {
+                            return {
+                                monsters: filteredMonsters
+                            }
                         })
                     }}
                 />
