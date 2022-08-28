@@ -6,17 +6,19 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state={
-            name: "YungTr"
+            name: "YungTr",
+            company: "BTM",
         }
     }
     render(){
         return (
             <div className="App">
                 <header className="App-header">
-                    <p>None {this.state.name}</p>
+                    <p>None {this.state.name}, I work at {this.state.company}</p>
                     <button
                         onClick={()=> {
                             this.setState({name: "Andree"})
+                            console.log(this.state)
                         }}
 
                     >
