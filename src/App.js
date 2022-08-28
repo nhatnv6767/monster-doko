@@ -36,7 +36,7 @@ class App extends Component {
                     placeholder="search monsters"
                     onChange={(event) => {
                         console.log(event.target.value)
-                        const searchString = event.target.value.toLowerCase()
+                        const searchString = event.target.value.toLocaleLowerCase()
                         // nếu tên của monster bao gồm chuỗi tìm kiếm, thì giữ nó
                         // nếu nó không bao gồm nó, loại bỏ nó
                         const filteredMonsters = this.state.monsters.filter((monster) => {
