@@ -3,14 +3,18 @@ import "./App.css"
 
 class App extends Component {
 
+    // always first
     constructor(props) {
         super(props);
         this.state = {
             monsters: []
         }
+        console.log("1")
     }
 
+    // 3rd
     componentDidMount() {
+        console.log("3")
         fetch("https://jsonplaceholder.typicode.com/users")
             .then(response =>
                 response.json()
@@ -24,7 +28,9 @@ class App extends Component {
             }))
     }
 
+    // 2nd
     render() {
+        console.log("2")
         return (
             <div className="App">
                 {
