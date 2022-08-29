@@ -4,7 +4,7 @@ class CardList extends Component {
     render() {
         return (
             <div>
-
+                CardList Component
             </div>
         );
     }
