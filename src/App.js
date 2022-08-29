@@ -54,7 +54,7 @@ class App extends Component {
                     className="search-box"
                     type="search"
                     placeholder="search monsters"
-                    onChange={this.onSearchChange}
+                    onChange={onSearchChange}
                 />
                 {
                     filteredMonsters.map((monster) => {
