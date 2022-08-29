@@ -66,7 +66,7 @@ class App extends Component {
                 {/*        )*/}
                 {/*    })*/}
                 {/*}*/}
-                <CardList/>
+                <CardList monsters={"I am the monsters"}/>
             </div>
         );
     }
