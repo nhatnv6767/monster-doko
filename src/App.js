@@ -7,10 +7,11 @@ import {useState} from "react";
 const App = () => {
 
     const [searchField, setSearchField] = useState("")
+    console.log({searchField})
 
     const onSearchChange = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase()
-        
+        setSearchField(searchFieldString)
     }
 
     return (
