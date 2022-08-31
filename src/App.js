@@ -1,7 +1,7 @@
 import "./App.css"
 import CardList from "./components/card-list/card-list.component";
 import SearchBox from "./components/search-box/search-box.component";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
 const App = () => {
@@ -11,14 +11,16 @@ const App = () => {
 
     console.log("render")
 
-    // giải thích bên dưới
-    fetch("https://jsonplaceholder.typicode.com/users")
-        .then(response =>
-            response.json()
-        )
-        .then((users) =>
-            setMonsters(users)
-        )
+    useEffect(() => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response =>
+                response.json()
+            )
+            .then((users) =>
+                setMonsters(users)
+            )
+    }, [])
+
 
     const onSearchChange = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase()
