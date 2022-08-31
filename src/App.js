@@ -9,6 +9,8 @@ const App = () => {
     const [searchField, setSearchField] = useState("")
     const [monsters, setMonsters] = useState([])
 
+    console.log("render")
+
     fetch("https://jsonplaceholder.typicode.com/users")
         .then(response =>
             response.json()
