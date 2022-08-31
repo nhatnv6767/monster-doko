@@ -9,7 +9,6 @@ const App = () => {
     const [searchField, setSearchField] = useState("")
     const [monsters, setMonsters] = useState([])
     const [filteredMonsters, setFilteredMonsters] = useState(monsters);
-    const [stringField, setStringField] = useState("")
 
     console.log("render")
 
@@ -38,13 +37,6 @@ const App = () => {
         setSearchField(searchFieldString)
     }
 
-    const onStringChange = (event) => {
-        setStringField(event.target.value)
-    }
-
-
-    console.log(filteredMonsters)
-
     return (
         <div className="App">
             <h1 className="app-title">Monsters Rolodex</h1>
@@ -52,10 +44,6 @@ const App = () => {
                 onChangeHandler={onSearchChange}
                 placeholder="search monsters"
                 className="monsters-search-box"
-            />
-            <SearchBox
-                onChangeHandler={onStringChange}
-                placeholder="set String"
             />
             <CardList monsters={filteredMonsters}/>
         </div>
