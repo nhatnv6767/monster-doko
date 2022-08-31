@@ -12,6 +12,7 @@ const App = () => {
     console.log("render")
 
     useEffect(() => {
+        console.log("render in useEffect")
         fetch("https://jsonplaceholder.typicode.com/users")
             .then(response =>
                 response.json()
