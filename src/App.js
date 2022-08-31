@@ -1,10 +1,20 @@
-import {Component} from "react";
 import "./App.css"
 import CardList from "./components/card-list/card-list.component";
 import SearchBox from "./components/search-box/search-box.component";
 
 
 const App = () => {
+
+    const onSearchChange = (event) => {
+        const searchField = event.target.value.toLocaleLowerCase()
+
+        this.setState(() => {
+            return {
+                searchField
+            }
+        })
+    }
+
     return (
         <div className="App">
             <h1 className="app-title">Monsters Rolodex</h1>
