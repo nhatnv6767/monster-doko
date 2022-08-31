@@ -7,12 +7,29 @@ import {useState} from "react";
 const App = () => {
 
     const [searchField, setSearchField] = useState("")
-    console.log(searchField)
+    const [monsters, setMonsters] = useState([])
+
+    fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response =>
+            response.json()
+        )
+        .then((users) =>
+            this.setState(() => {
+                return {
+                    monsters: users
+                }
+            }, () => {
+                // console.log(this.state)
+            }))
 
     const onSearchChange = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase()
         setSearchField(searchFieldString)
     }
+
+    const filteredMonsters = monsters.filter((monster) => {
+        return monster.name.toLocaleLowerCase().includes(searchField)
+    })
 
     return (
         <div className="App">
