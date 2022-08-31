@@ -1,8 +1,8 @@
 import "./card-list.styles.css"
 import Card from "../card/card.component";
 
-const CardList = (props, forwardRef) => {
-    const {monsters} = this.props;
+const CardList = (props) => {
+    const {monsters} = props;
     return (
         <div className="card-list">
             {
