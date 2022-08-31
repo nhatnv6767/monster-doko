@@ -8,6 +8,7 @@ const App = () => {
 
     const [searchField, setSearchField] = useState("")
     const [monsters, setMonsters] = useState([])
+    const [stringField, setStringField] = useState("")
 
     console.log("render")
 
@@ -28,9 +29,15 @@ const App = () => {
         setSearchField(searchFieldString)
     }
 
+    const onStringChange = (event) => {
+        setStringField(event.target.value)
+    }
+
     const filteredMonsters = monsters.filter((monster) => {
         return monster.name.toLocaleLowerCase().includes(searchField)
     })
+
+    console.log(filteredMonsters)
 
     return (
         <div className="App">
@@ -39,6 +46,10 @@ const App = () => {
                 onChangeHandler={onSearchChange}
                 placeholder="search monsters"
                 className="monsters-search-box"
+            />
+            <SearchBox
+                onChangeHandler={onStringChange}
+                placeholder="set String"
             />
             <CardList monsters={filteredMonsters}/>
         </div>
