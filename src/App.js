@@ -14,13 +14,8 @@ const App = () => {
             response.json()
         )
         .then((users) =>
-            this.setState(() => {
-                return {
-                    monsters: users
-                }
-            }, () => {
-                // console.log(this.state)
-            }))
+            setMonsters(users)
+        )
 
     const onSearchChange = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase()
