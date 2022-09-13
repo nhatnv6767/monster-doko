@@ -4,7 +4,7 @@ import "./search-box.styles.css"
 type SearchBoxProps = {
     className: string;
     placeholder?: string;
-    onChangeHandler: ChangeEventHandler;
+    onChangeHandler: ChangeEventHandler<HTMLInputElement>;
 }
 
 const SearchBox = ({className, placeholder, onChangeHandler}: SearchBoxProps) => {
@@ -13,7 +13,7 @@ const SearchBox = ({className, placeholder, onChangeHandler}: SearchBoxProps) =>
             className={`search-box ${className}`}
             type="search"
             placeholder={placeholder}
-            onChange={onChangeHandler}
+            onChange={(e) => onChangeHandler}
         />
     );
 }
