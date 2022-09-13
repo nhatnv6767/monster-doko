@@ -17,10 +17,21 @@ type SearchBoxProps = {
     onChangeHandler: (a: string) => void;
 }
 
-const Address = {
-    street: "",
-    state: "",
-    province: "",
+type CanadianAddress = {
+    street: string;
+    province: string;
+}
+
+type USAddress = {
+    street: string;
+    state: string;
+}
+
+type NorthAmericanAddress = CanadianAddress | USAddress;
+
+const Address: NorthAmericanAddress = {
+    street: "some value",
+    province: "some value2"
 }
 
 const SearchBox = ({className, placeholder, onChangeHandler}: SearchBoxProps) => {
