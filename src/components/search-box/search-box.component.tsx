@@ -1,5 +1,7 @@
 import "./search-box.styles.css"
 
+const name: string = "123123123"
+
 const SearchBox = ({className, placeholder, onChangeHandler}) => {
     return (
         <input
