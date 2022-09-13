@@ -27,11 +27,16 @@ type USAddress = {
     state: string;
 }
 
-type NorthAmericanAddress = CanadianAddress | USAddress;
+type ItalianAddress = {
+    street: string;
+    region: string;
+}
+
+type NorthAmericanAddress = CanadianAddress | USAddress | ItalianAddress;
 
 const Address: NorthAmericanAddress = {
     street: "some value",
-    state: "some value 2",
+    region: "some value 2",
 }
 
 const SearchBox = ({className, placeholder, onChangeHandler}: SearchBoxProps) => {
