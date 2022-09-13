@@ -31,7 +31,7 @@ type NorthAmericanAddress = CanadianAddress | USAddress;
 
 const Address: NorthAmericanAddress = {
     street: "some value",
-    province: "some value2"
+    state: "some value 2",
 }
 
 const SearchBox = ({className, placeholder, onChangeHandler}: SearchBoxProps) => {
