@@ -1,6 +1,8 @@
 import "./search-box.styles.css"
 
-const name: string = "123123123"
+const func: (s: string, b: number, c: boolean) => void = (a, b, c) => {
+
+}
 
 const SearchBox = ({className, placeholder, onChangeHandler}) => {
     return (
