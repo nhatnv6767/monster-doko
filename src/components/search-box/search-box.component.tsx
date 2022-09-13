@@ -4,10 +4,11 @@ interface ISearchBoxProps {
     // bên trong này là object
     className: string;
     // optional property
-    placeholder?: string | null;
+    placeholder?: string
+
 }
 
-const SearchBox = ({className, placeholder, onChangeHandler}) => {
+const SearchBox = ({className, placeholder, onChangeHandler}: ISearchBoxProps) => {
     return (
         <input
             className={`search-box ${className}`}
