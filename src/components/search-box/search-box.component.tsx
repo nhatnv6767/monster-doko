@@ -1,7 +1,10 @@
 import "./search-box.styles.css"
 
-const func: (s: string, b: number, c: boolean) => void = (a, b, c) => {
-
+interface ISearchBoxProps {
+    // bên trong này là object
+    className: string;
+    // optional property
+    placeholder?: string | null;
 }
 
 const SearchBox = ({className, placeholder, onChangeHandler}) => {
