@@ -17,6 +17,12 @@ type SearchBoxProps = {
     onChangeHandler: (a: string) => void;
 }
 
+const Address = {
+    street: "",
+    state: "",
+    province: "",
+}
+
 const SearchBox = ({className, placeholder, onChangeHandler}: SearchBoxProps) => {
     return (
         <input
@@ -29,3 +35,9 @@ const SearchBox = ({className, placeholder, onChangeHandler}: SearchBoxProps) =>
 }
 
 export default SearchBox;
+
+
+/*
+ interface có kế thừa (extends) và overload (nghĩa là viết bao nhiêu như ví dụ trên kia là
+ 2 lần đều không thành vấn đề, nó sẽ tự động gộp lại)
+* */
