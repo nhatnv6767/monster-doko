@@ -1,13 +1,13 @@
 import "./search-box.styles.css"
 
-interface ISearchBoxProps extends IChangeHandlerProps {
+interface ISearchBoxProps {
     // bên trong này là object
     className: string;
     // optional property
     placeholder?: string;
 }
 
-interface IChangeHandlerProps {
+interface ISearchBoxProps {
     onChangeHandler: (a: string) => void;
 }
 
