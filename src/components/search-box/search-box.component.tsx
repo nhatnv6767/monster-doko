@@ -13,7 +13,7 @@ const SearchBox = ({className, placeholder, onChangeHandler}: SearchBoxProps) =>
             className={`search-box ${className}`}
             type="search"
             placeholder={placeholder}
-            onChange={(e) => onChangeHandler}
+            onChange={onChangeHandler}
         />
     );
 }
