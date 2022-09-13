@@ -11,7 +11,13 @@ interface ISearchBoxProps {
     onChangeHandler: (a: string) => void;
 }
 
-const SearchBox = ({className, placeholder, onChangeHandler}: ISearchBoxProps) => {
+type SearchBoxProps = {
+    className: string;
+    placeholder?: string;
+    onChangeHandler: (a: string) => void;
+}
+
+const SearchBox = ({className, placeholder, onChangeHandler}: SearchBoxProps) => {
     return (
         <input
             className={`search-box ${className}`}
