@@ -27,7 +27,7 @@ const App = () => {
         //         setMonsters(users)
         //     )
         const fetchUsers = async () => {
-            const users = await getData<Array<Monster>>("https://jsonplaceholder.typicode.com/users")
+            const users = await getData<Monster[]>("https://jsonplaceholder.typicode.com/users")
         }
     }, [])
 
