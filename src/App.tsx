@@ -4,6 +4,11 @@ import SearchBox from "./components/search-box/search-box.component";
 import {useEffect, useState} from "react";
 import {getData} from "./utils/data.utils";
 
+type Monster = {
+    id: string;
+    name: string;
+    email: string;
+}
 
 const App = () => {
 
@@ -22,7 +27,7 @@ const App = () => {
         //         setMonsters(users)
         //     )
         const fetchUsers = async () => {
-            const users = await getData("https://jsonplaceholder.typicode.com/users")
+            const users = await getData<Monster[]>("https://jsonplaceholder.typicode.com/users")
         }
     }, [])
 
