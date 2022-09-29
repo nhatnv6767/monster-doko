@@ -2,6 +2,7 @@ import "./App.css"
 import CardList from "./components/card-list/card-list.component";
 import SearchBox from "./components/search-box/search-box.component";
 import {useEffect, useState} from "react";
+import {getData} from "./utils/data.utils";
 
 
 const App = () => {
@@ -13,13 +14,16 @@ const App = () => {
     console.log("rendered")
 
     useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then(response =>
-                response.json()
-            )
-            .then((users) =>
-                setMonsters(users)
-            )
+        // fetch("https://jsonplaceholder.typicode.com/users")
+        //     .then(response =>
+        //         response.json()
+        //     )
+        //     .then((users) =>
+        //         setMonsters(users)
+        //     )
+        const fetchUsers = async () => {
+            const users = await getData("https://jsonplaceholder.typicode.com/users")
+        }
     }, [])
 
     useEffect(() => {
