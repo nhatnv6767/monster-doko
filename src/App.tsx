@@ -13,7 +13,7 @@ type Monster = {
 const App = () => {
 
     const [searchField, setSearchField] = useState("")
-    const [monsters, setMonsters] = useState([])
+    const [monsters, setMonsters] = useState<Monster[]>([])
     const [filteredMonsters, setFilteredMonsters] = useState(monsters);
 
     console.log("rendered")
@@ -28,6 +28,7 @@ const App = () => {
         //     )
         const fetchUsers = async () => {
             const users = await getData<Monster[]>("https://jsonplaceholder.typicode.com/users")
+            setMonsters(users)
         }
     }, [])
 
