@@ -4,7 +4,7 @@ import SearchBox from "./components/search-box/search-box.component";
 import {useEffect, useState, ChangeEvent} from "react";
 import {getData} from "./utils/data.utils";
 
-type Monster = {
+export type Monster = {
     id: string;
     name: string;
     email: string;
